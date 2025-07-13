@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Burgur - Burger Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/broast.png" type="image/x-icon">
+</head>
+
+<body onload="onload()" class="bg-[#193626] text-[#f3f0d7] font-sans overflow-x-hidden select-none antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-[#122919] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+        <div class="text-2xl font-League font-black uppercase -tracking-tighter cursor-default">
+            <a href="index.html">BURGUR</a>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-5 sm:gap-10 list-none text-center">
+            <li><a href="./index.html" class="hover:text-[#208dbd] font-serif italic">Home</a></li>
+            <li><a href="order.html" class="hover:text-[#208dbd] font-serif italic">Order</a></li>
+            <li><a href="./about.html" class="hover:text-[#208dbd] font-serif italic ">About</a></li>
+            <li><a href="./contact.html" class="hover:text-[#208dbd] font-serif italic">Contact</a></li>
+        </ul>
+        <div id="namedisplay" class="hidden flex-col sm:flex-row items-center gap-3 sm:gap-9">
+            <div class="flex items-center gap-6">
+                <!-- 🛒 Cart Icon -->
+                <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
+                    <a href="addtocart.html">
+                        <span class="text-2xl">🛒</span>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <h1 id="dName" class="p-2 border-white border-2 px-10 rounded-3xl text-center"></h1>
+                <button onclick="logout()" class="p-2 border-white border-2 px-6 rounded-3xl">LogOut</button>
+            </div>
+
+        </div>
+            <button id="btn" onclick="window.location.href='./signup.html'"
+                class="p-2 border-white border-2 px-6 rounded-3xl">
+                Login / Signup
+            </button>
+    </nav>
+
+
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto my-16 px-4 flex flex-col md:flex-row items-center gap-16">
+        <!-- Text Section -->
+        <section data-aos="zoom-in-down" class="flex-1 text-center md:text-left">
+            <div class="tracking-widest font-bold text-sm text-[#a5b1a1] mb-1">THE ULTIMATE</div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#f3f0d7] mb-2">Burger Club</h1>
+            <div class="text-sm tracking-wider text-[#a5b1a1]">Savor the Flavor, Join the Club!</div>
+            <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                <img onmouseout="mouseOut()" onmouseover="mouseOver(this)" src="./images/burgerima.png"
+                    alt="Juicy burger"
+                    class="w-[60px] h-[60px] rounded-xl object-cover bg-[#151f18] hover:border-[#208dbd] border-2 transition-transform hover:scale-110" />
+                <img onmouseout="mouseOut()" onmouseover="mouseOver(this)" src="./images/burgerimg2.png"
+                    alt="Double cheeseburger"
+                    class="w-[60px] h-[60px] rounded-xl object-cover bg-[#151f18] border-2 hover:border-[#208dbd] hover:scale-110 transition" />
+                <img onmouseout="mouseOut()" onmouseover="mouseOver(this)" src="./images/burgerimg3.png"
+                    alt="Classic cheeseburger"
+                    class="w-[60px] h-[60px] rounded-xl object-cover bg-[#151f18] border-2 hover:border-[#208dbd] hover:scale-110 transition" />
+                <img onmouseout="mouseOut()" onmouseover="mouseOver(this)" src="./images/main.png"
+                    alt="Burger with fries"
+                    class="w-[60px] h-[60px] rounded-xl object-cover bg-[#151f18] border-2 hover:border-[#208dbd] hover:scale-110 transition" />
+            </div>
+        </section>
+        <!-- Hero Image -->
+        <section class="flex-1 max-w-full md:max-w-[500px]">
+            <img data-aos="zoom-in-down" id="bannarImg" src="./images/burger.png" alt="Cheeseburger image"
+                class="w-full rounded-2xl" onerror="this.style.display='none';this.alt+=' - image not available';" />
+        </section>
+    </main>
+
+    <hr>
+    <section id="menu" class="bg-[#12372a] py-14">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-semibold">Menu</h1>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-6">
+            <!-- Menu Items -->
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/burgerima.png" class="h-[20vh]" alt="Burger">
+                <h4 class="mt-2 font-serif">Burger</h4>
+            </div>
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/broast.png" class="h-[20vh]" alt="Broast">
+                <h4 class="mt-2 font-serif">Broast</h4>
+            </div>
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/fries.png" class="h-[20vh]" alt="Fries">
+                <h4 class="mt-2 font-serif">Fries</h4>
+            </div>
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/coffee.png" class="h-[20vh]" alt="Coffee">
+                <h4 class="mt-2 font-serif">Coffee</h4>
+            </div>
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/combo.png" class="h-[20vh]" alt="Combo Deals">
+                <h4 class="mt-2 font-serif">Combo Deals</h4>
+            </div>
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/pizza.png" class="h-[20vh]" alt="Pizza">
+                <h4 class="mt-2 font-serif">Pizza</h4>
+            </div>
+            <div
+                class="card flex flex-col rounded-2xl justify-center items-center w-[40%] sm:w-[30%] md:w-[20%] h-[30vh] hover:scale-110 duration-700">
+                <img src="./images/burgerimg.png" class="h-[20vh]" alt="Deals">
+                <h4 class="mt-2 font-serif">Deals</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-white text-black py-14 px-4">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold">About</h1>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-center items-center gap-10 mt-10">
+            <div class="w-full lg:w-[40%] bg-[#193626] flex justify-center items-center rounded-tl-3xl rounded-br-3xl">
+                <img src="./images/burgerimg.png" class="h-[50vh]" alt="About Image">
+            </div>
+            <div class="w-full lg:w-[40%]">
+                <p class="pl-0 lg:pl-5">Welcome to Burger, where passion meets the perfect patty! We’re more than just a
+                    burger joint — we’re a destination for burger lovers who crave bold flavors, fresh ingredients, and
+                    a mouthwatering experience in every bite. From our signature handcrafted burgers to our crispy fries
+                    and creamy shakes, everything is made with care and quality you can taste. Whether you’re grabbing a
+                    quick lunch or enjoying a night out with friends, we’re here to serve you the juiciest, most
+                    satisfying burgers in town.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-[#122919] text-[#f3f0d7] py-10 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <h2 class="text-xl font-bold mb-2">BURGUR</h2>
+                <p class="text-sm text-[#a5b1a1]">Savor the Flavor, Join the Club!</p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Social Media</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="#" class="hover:text-[#208dbd]">Facebook</a></li>
+                    <li><a href="#" class="hover:text-[#208dbd]">Instagram</a></li>
+                    <li><a href="#" class="hover:text-[#208dbd]">Twitter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Useful Links</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="contact.html" class="hover:text-[#208dbd]">Help Center</a></li>
+                    <li><a href="contact.html" class="hover:text-[#208dbd]">Contact Us</a></li>
+                    <li><a href="privacy.html" class="hover:text-[#208dbd]">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-xs text-[#a5b1a1] mt-8">&copy; 2025 BURGUR. All rights reserved.</div>
+    </footer>
+
+
+    <script src="app.js"></script>
+    <script src="extra.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+
+</html>

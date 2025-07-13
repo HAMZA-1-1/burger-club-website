@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - BURGUR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="./images/broast.png" type="image/x-icon">
+</head>
+
+<body class="bg-[#193626] text-[#f3f0d7] font-sans antialiased">
+
+  <!-- Navbar -->
+   <nav class="bg-[#122919] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+        <div class="text-2xl font-League font-black uppercase -tracking-tighter cursor-default">
+            <a href="index.html">BURGUR</a>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-5 sm:gap-10 list-none text-center">
+            <li><a href="./index.html" class="hover:text-[#208dbd] font-serif italic">Home</a></li>
+            <li><a href="order.html" class="hover:text-[#208dbd] font-serif italic">Order</a></li>
+            <li><a href="./about.html" class="hover:text-[#208dbd] font-serif italic ">About</a></li>
+            <li><a href="./contact.html" class="hover:text-[#208dbd] font-serif italic">Contact</a></li>
+        </ul>
+        <div id="namedisplay" class="hidden flex-col sm:flex-row items-center gap-3 sm:gap-9">
+            <div class="flex items-center gap-6">
+                <!-- 🛒 Cart Icon -->
+                <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
+                    <a href="addtocart.html">
+                        <span class="text-2xl">🛒</span>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <h1 id="dName" class="p-2 border-white border-2 px-10 rounded-3xl text-center"></h1>
+                <button onclick="logout()" class="p-2 border-white border-2 px-6 rounded-3xl">LogOut</button>
+            </div>
+
+        </div>
+            <button id="btn" onclick="window.location.href='./signup.html'"
+                class="p-2 border-white border-2 px-6 rounded-3xl">
+                Login / Signup
+            </button>
+    </nav>
+
+  <!-- About Section -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h1 class="text-3xl sm:text-4xl font-bold font-serif mb-6 text-center">About BURGUR</h1>
+    <p class="text-lg leading-7 mb-6 text-center">
+      <strong>BURGUR</strong> is more than just a burger joint — it's a community built around flavor, fun, and freshness.
+      Born with the passion to deliver the juiciest burgers, sizzling broasts, cheesy pizzas, and crispy fries, our mission is to bring premium taste to every bite.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-10 items-center mt-10">
+      <img src="./javascript image/smashburger.jpg" alt="Our Story"
+        class="rounded-xl shadow-lg w-full h-auto max-h-[400px] object-cover" />
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 text-center sm:text-left">Our Story</h2>
+        <p class="text-base leading-7 mb-4 text-justify">
+          BURGUR was founded in 2023 by food lovers who were tired of average fast food. We crafted a menu that blends bold flavors with top-quality ingredients, made fresh to order. From humble beginnings to a fast-growing fanbase, BURGUR is redefining what great taste means.
+        </p>
+        <p class="text-base leading-7 text-justify">
+          Whether you're craving a spicy zinger burger, family-size pizza, or loaded fries — we serve it hot and fresh, just the way you love it.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <h2 class="text-2xl font-semibold mb-3">Why Choose BURGUR?</h2>
+      <ul class="list-disc list-inside text-left max-w-3xl mx-auto space-y-2 text-base leading-7">
+        <li>🔥 Always Fresh, Never Frozen</li>
+        <li>👨‍🍳 Handcrafted by Real Chefs</li>
+        <li>🚀 Fast Delivery & Online Ordering</li>
+        <li>💯 100% Customer Satisfaction</li>
+        <li>🌱 Options for Every Taste</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#122919] text-[#f3f0d7] py-6 px-4 mt-10">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+      <div>
+        <h3 class="text-xl font-bold font-sans">BURGUR</h3>
+        <p class="text-sm mt-2">Your favorite burger club!</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Follow Us</h4>
+        <ul class="mt-2 space-y-1">
+          <li><a href="#" class="hover:text-[#208dbd]">Facebook</a></li>
+          <li><a href="#" class="hover:text-[#208dbd]">Instagram</a></li>
+          <li><a href="#" class="hover:text-[#208dbd]">Twitter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Useful Links</h4>
+        <ul class="mt-2 space-y-1">
+          <li><a href="contact.html" class="hover:text-[#208dbd]">Help Center</a></li>
+          <li><a href="contact.html" class="hover:text-[#208dbd]">Contact Us</a></li>
+          <li><a href="./privacy.html" class="hover:text-[#208dbd]">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-6 text-sm opacity-70">© 2025 BURGUR. All rights reserved.</div>
+  </footer>
+
+  <script src="extra.js"></script>
+</body>
+
+</html>

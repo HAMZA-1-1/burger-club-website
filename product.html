@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - BURGUR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./images/broast.png" type="image/x-icon">
+</head>
+
+<body class="bg-[#193626] text-[#f3f0d7] font-sans">
+
+  <!-- Navbar -->
+   <nav class="bg-[#122919] px-4 sm:px-8 py-4 flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+        <div class="text-2xl font-League font-black uppercase -tracking-tighter cursor-default">
+            <a href="index.html">BURGUR</a>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-5 sm:gap-10 list-none text-center">
+            <li><a href="./index.html" class="hover:text-[#208dbd] font-serif italic">Home</a></li>
+            <li><a href="order.html" class="hover:text-[#208dbd] font-serif italic">Order</a></li>
+            <li><a href="./about.html" class="hover:text-[#208dbd] font-serif italic ">About</a></li>
+            <li><a href="./contact.html" class="hover:text-[#208dbd] font-serif italic">Contact</a></li>
+        </ul>
+        <div id="namedisplay" class="hidden flex-col sm:flex-row items-center gap-3 sm:gap-9">
+            <div class="flex items-center gap-6">
+                <!-- 🛒 Cart Icon -->
+                <div class="relative cursor-pointer" onclick="window.location.href='cart.html'">
+                    <a href="addtocart.html">
+                        <span class="text-2xl">🛒</span>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                <h1 id="dName" class="p-2 border-white border-2 px-10 rounded-3xl text-center"></h1>
+                <button onclick="logout()" class="p-2 border-white border-2 px-6 rounded-3xl">LogOut</button>
+            </div>
+
+        </div>
+            <button id="btn" onclick="window.location.href='./signup.html'"
+                class="p-2 border-white border-2 px-6 rounded-3xl">
+                Login / Signup
+            </button>
+    </nav>
+
+  <!-- Product Section -->
+  <section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-10">
+
+    <!-- Product Images -->
+    <div>
+      <img id="productimg" src="" alt="Product" class="w-full rounded-lg shadow-lg">
+
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h1 id="productName" class="text-3xl font-bold mb-2">Zinger Burger - Spicy Crust</h1>
+      <p class="text-sm text-gray-300 mb-2">Brand: BURGUR Club</p>
+
+      <div class="mt-4">
+        <span id="productPrice" class="text-2xl font-bold text-[#208dbd]">Rs. 300</span>
+        <span class="text-sm line-through text-gray-400 ml-3">Rs. 650</span>
+        <span class="ml-3 text-sm text-green-400">Save 14%</span>
+      </div>
+      <!-- Size Buttons -->
+      <div class="mt-4">
+        <label class="text-sm font-medium block mb-2">Size:</label>
+        <div id="sizeOptions" class="flex gap-3">
+          <button onclick="selectSize(this)" data-size="Small"
+            class="size-btn px-4 py-1 border border-white rounded-md text-sm bg-[#208dbd] text-white">Small</button>
+          <button onclick="selectSize(this)" data-size="Medium"
+            class="size-btn px-4 py-1 border border-white rounded-md text-sm hover:bg-[#208dbd] hover:text-white">Medium</button>
+          <button onclick="selectSize(this)" data-size="Large"
+            class="size-btn px-4 py-1 border border-white rounded-md text-sm hover:bg-[#208dbd] hover:text-white">Large</button>
+        </div>
+      </div>
+      <!-- <div class="mt-4 flex items-center gap-2">
+        <label for="qty" class="text-sm font-medium">Quantity:</label>
+        <input id="qty" type="number" value="1" min="1"
+          class="w-16 text-center bg-[#122919] border border-white rounded-md text-white py-1" />
+      </div> -->
+
+      <div class="flex gap-4 mt-6">
+        <button onclick="addtocart()"
+          class="bg-[#208dbd] hover:bg-[#1a6b94] text-white font-semibold px-6 py-2 rounded-md">Add to
+          Cart</button>
+        <button class="bg-white text-black px-6 py-2 rounded-md hover:bg-gray-300">Buy Now</button>
+      </div>
+
+      <ul class="mt-6 text-sm text-gray-300 space-y-2">
+        <li>💸 Cash on Delivery available</li>
+        <li>📦 Pickup from BURGUR branches available</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#122919] text-[#f3f0d7] py-10 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h2 class="text-xl font-bold mb-2">BURGUR</h2>
+        <p class="text-sm text-[#a5b1a1]">Savor the Flavor, Join the Club!</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Social Media</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:text-[#208dbd]">Facebook</a></li>
+          <li><a href="#" class="hover:text-[#208dbd]">Instagram</a></li>
+          <li><a href="#" class="hover:text-[#208dbd]">Twitter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Useful Links</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a href="contact.html" class="hover:text-[#208dbd]">Help Center</a></li>
+          <li><a href="contact.html" class="hover:text-[#208dbd]">Contact Us</a></li>
+          <li><a href="privacy.html" class="hover:text-[#208dbd]">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-xs text-[#a5b1a1] mt-8">&copy; 2025 BURGUR. All rights reserved.</div>
+  </footer>
+  <script src="product.js"></script>
+  <script src="extra.js"></script>
+</body>
+
+</html>
