@@ -6,7 +6,7 @@ A modern, responsive, and visually appealing burger restaurant website built usi
 
 ## 🚀 Live Preview
 
-[🔗 View Live Site](https://hamza-1-1.github.io/burger-club-website) *(if hosted on GitHub Pages or other platform)*
+[🔗 View Live Site](https://burgerclub-website.netlify.app/) *(if hosted on GitHub Pages or other platform)*
 
 ---
 
@@ -32,5 +32,4 @@ A modern, responsive, and visually appealing burger restaurant website built usi
 
 ---
 
-## 🧪 Folder Structure
 
